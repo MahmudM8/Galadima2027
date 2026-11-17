@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Survey | GEN-Z FOR GALADIMA 2027</title>
+<meta name="theme-color" content="#0a4d2e">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#0a4d2e;--deep:#06331e;--sun:#ffc93c;--paper:#f5f8f4;--text:#14281d;--muted:#4d6155;--display:"Bricolage Grotesque","Arial Black",sans-serif;--body:"Figtree",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);background:var(--paper);color:var(--text);line-height:1.5;font-size:1.0625rem}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.bar{background:var(--green);color:#fff}
+.bar div{width:min(40rem,100% - 2rem);margin:auto;display:flex;justify-content:space-between;align-items:center;padding-block:.85rem;gap:1rem}
+.brand{font-family:var(--display);font-weight:800}
+.bar button{background:none;border:1px solid rgba(255,255,255,.5);color:#fff;font:inherit;font-size:.9rem;padding:.35rem .8rem;border-radius:.35rem;cursor:pointer}
+main{width:min(40rem,100% - 2rem);margin:1.5rem auto 4rem}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.1}
+.sub{color:var(--muted);margin:.5rem 0 1.5rem}
+fieldset{border:0;border-top:2px solid var(--green);padding-top:1rem;margin-bottom:1.6rem}
+legend{font-family:var(--display);font-weight:800;font-size:1.2rem;padding-right:.6rem}
+label,.lab{display:block;font-weight:600;margin-top:1rem}
+input[type=text],input[type=tel],input[type=date]{display:block;width:100%;margin-top:.35rem;padding:.8rem .9rem;font:inherit;border:2px solid #b9c9be;border-radius:.4rem;background:#fff;color:var(--text)}
+.hint{font-weight:400;font-size:.9rem;color:var(--muted);margin-top:.25rem;display:block}
+.hint.warn{color:#7a5200;background:#fff3cd;padding:.3rem .5rem;border-radius:.3rem}
+.choices{display:grid;gap:.6rem;margin-top:.5rem}
+.choices label{display:flex;gap:.7rem;align-items:center;margin:0;padding:.8rem .9rem;border:2px solid #b9c9be;border-radius:.4rem;background:#fff;font-weight:600;cursor:pointer}
+.choices input{width:1.2rem;height:1.2rem;accent-color:var(--green)}
+.consent{display:flex;gap:.7rem;align-items:flex-start;font-weight:400;margin-top:0;padding:1rem;background:#e7efe9;border-radius:.4rem}
+.consent input{width:1.3rem;height:1.3rem;flex:none;margin-top:.2rem;accent-color:var(--green)}
+#submit{width:100%;margin-top:1.2rem;padding:1.05rem;font:inherit;font-weight:600;font-size:1.1rem;background:var(--green);color:#fff;border:0;border-radius:.4rem;cursor:pointer}
+#submit:disabled{opacity:.6;cursor:wait}
+#status{margin-top:1rem;padding:.9rem 1rem;border-radius:.4rem;display:none;font-weight:600}
+#status.ok{display:block;background:#d6f0de;color:#0a4d2e}
+#status.err{display:block;background:#fde0e0;color:#8a1111}
+.count{font-size:.9rem;color:var(--muted);margin-top:.4rem}
+</style>
+</head>
+<body>
+<header class="bar"><div><span class="brand">GEN-Z FOR GALADIMA 2027</span><button id="out" type="button">Sign out</button></div></header>
+
+<main>
+  <h1>Supporter survey</h1>
+  <p class="sub">Fill this in with the person in front of you. Type in any box if their answer is not in the list.</p>
+
+  <form id="f" novalidate>
+    <fieldset>
+      <legend>Who they are</legend>
+      <label>Full name<input id="name" type="text" autocomplete="off" required></label>
+      <label>Phone number<input id="phone" type="tel" inputmode="tel" placeholder="08012345678" required><span class="hint">Nigerian mobile number</span></label>
+      <label>Date of birth<input id="dob" type="date" required><span class="hint">Only people aged 18 or older can take part.</span></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Where they vote</legend>
+      <label>Polling unit code from the voter card (optional)
+        <input id="code" type="text" autocomplete="off" placeholder="02/20/04/017">
+        <span class="hint" id="codeHint">Type the code and we will fill the three boxes below.</span></label>
+      <label>LGA<input id="lga" type="text" list="ll" autocomplete="off" placeholder="Pick or type" required><datalist id="ll"></datalist></label>
+      <label>Ward<input id="ward" type="text" list="wl" autocomplete="off" placeholder="Pick or type" required><datalist id="wl"></datalist><span class="hint warn" id="wardHint" hidden>Not in the list. It will be saved as you typed it.</span></label>
+      <label>Polling unit<input id="pu" type="text" list="ul" autocomplete="off" placeholder="Pick or type" required><datalist id="ul"></datalist><span class="hint warn" id="puHint" hidden>Not in the list. It will be saved as you typed it.</span></label>
+      <label>Voter card number (optional)<input id="vin" type="text" autocomplete="off" placeholder="Leave empty if they prefer not to say"></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Where they stand</legend>
+      <span class="lab">Would you consider voting for Galadima?</span>
+      <div class="choices">
+        <label><input type="radio" name="intent" value="yes"> Yes</label>
+        <label><input type="radio" name="intent" value="maybe"> Maybe</label>
+        <label><input type="radio" name="intent" value="no"> No</label>
+      </div>
+    </fieldset>
+
+    <label class="consent"><input id="consent" type="checkbox"><span>I agree that the GEN-Z FOR GALADIMA 2027 team may store my details and my answer, use them to understand support ahead of the 2027 election, and contact me about it. I can ask for my entry to be deleted at any time.</span></label>
+
+    <button id="submit" type="submit">Save answer</button>
+    <div id="status" role="status"></div>
+    <p class="count" id="count"></p>
+  </form>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script>
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const $ = id => document.getElementById(id);
+const norm = s => (s || '').trim().toLowerCase().replace(/\s+/g, ' ');
+const esc = s => String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;');
+const find = (list, v, label = x => x.name) => v.trim() ? list.find(x => norm(label(x)) === norm(v)) : undefined;
+const fill = (id, list, label) => { $(id).innerHTML = list.map(x => `<option value="${esc(label(x))}">`).join(''); };
+
+let lgas = [], wards = [], units = [], curLga = null, curWard = null, saved = 0;
+
+// ---- sign-in guard ----
+(async () => {
+  const { data } = await sb.auth.getSession();
+  if (!data.session) { location.href = 'login.html'; return; }
+  const r = await sb.from('lgas').select('id,code,name').order('name');
+  lgas = r.data || [];
+  fill('ll', lgas, x => x.name);
+})();
+$('out').onclick = async () => { await sb.auth.signOut(); location.href = 'login.html'; };
+
+// ---- cascading lists (all three boxes also accept typed text) ----
+async function loadWards(l) {
+  curLga = l ? l.id : null; wards = []; units = []; curWard = null;
+  fill('wl', []); fill('ul', []);
+  if (!l) return;
+  const { data } = await sb.from('wards').select('id,code,name').eq('lga_id', l.id).order('name');
+  wards = data || []; fill('wl', wards, x => x.name);
+}
+async function loadUnits(w) {
+  curWard = w ? w.id : null; units = []; fill('ul', []);
+  if (!w) return;
+  const { data } = await sb.from('polling_units').select('id,pu_code,name').eq('ward_id', w.id).order('pu_code');
+  const d = data || [], n = {};
+  d.forEach(x => n[norm(x.name)] = (n[norm(x.name)] || 0) + 1);
+  units = d.map(x => ({ ...x, label: n[norm(x.name)] > 1 ? `${x.name} (${x.pu_code.slice(-3)})` : x.name }));
+  fill('ul', units, x => x.label);
+}
+function hints() {
+  $('wardHint').hidden = !$('ward').value.trim() || !!find(wards, $('ward').value);
+  $('puHint').hidden = !$('pu').value.trim() || !!find(units, $('pu').value, x => x.label);
+}
+$('lga').addEventListener('input', async () => {
+  const l = find(lgas, $('lga').value);
+  if ((l ? l.id : null) !== curLga) { $('ward').value = ''; $('pu').value = ''; await loadWards(l); }
+  hints();
+});
+$('ward').addEventListener('input', async () => {
+  const w = find(wards, $('ward').value);
+  if ((w ? w.id : null) !== curWard) { $('pu').value = ''; await loadUnits(w); }
+  hints();
+});
+$('pu').addEventListener('input', hints);
+
+// ---- polling unit code shortcut ----
+$('code').addEventListener('change', async () => {
+  const v = $('code').value.trim().replace(/[-\s]+/g, '/');
+  if (!v) { $('codeHint').textContent = 'Type the code and we will fill the three boxes below.'; return; }
+  const { data } = await sb.from('polling_units')
+    .select('id,pu_code,name,ward_id,wards(id,code,name,lga_id,lgas(id,code,name))').eq('pu_code', v).maybeSingle();
+  if (!data) { $('codeHint').textContent = 'Code not found. Pick or type the three boxes below instead.'; return; }
+  const w = data.wards, l = w.lgas;
+  $('lga').value = l.name; await loadWards(lgas.find(x => x.id === l.id) || l);
+  $('ward').value = w.name; await loadUnits(wards.find(x => x.id === w.id) || w);
+  const u = units.find(x => x.id === data.id); $('pu').value = u ? u.label : data.name;
+  $('codeHint').textContent = 'Filled from the code.'; hints();
+});
+
+// ---- submit ----
+function show(kind, text) { const s = $('status'); s.className = kind; s.textContent = text; s.scrollIntoView({ block: 'nearest' }); }
+function cleanPhone(p) {
+  const d = p.replace(/[\s()-]/g, '');
+  const m = d.match(/^(?:\+?234|0)([789][01]\d{8})$/);
+  return m ? '+234' + m[1] : null;
+}
+$('f').addEventListener('submit', async e => {
+  e.preventDefault();
+  const name = $('name').value.trim(), phone = cleanPhone($('phone').value), dob = $('dob').value;
+  const lgaV = $('lga').value.trim(), wardV = $('ward').value.trim(), puV = $('pu').value.trim();
+  const vin = $('vin').value.replace(/\s/g, ''), intent = (document.querySelector('input[name=intent]:checked') || {}).value;
+
+  if (name.length < 3) return show('err', 'Enter the full name.');
+  if (!phone) return show('err', 'Enter a valid Nigerian mobile number, for example 08012345678.');
+  if (!dob) return show('err', 'Enter the date of birth.');
+  const t = new Date(); t.setFullYear(t.getFullYear() - 18);
+  if (new Date(dob) > t) return show('err', 'Only people aged 18 or older can take part.');
+  if (!lgaV || !wardV || !puV) return show('err', 'Fill in the LGA, ward and polling unit. You can type them if they are not in the list.');
+  if (vin && !/^[A-Za-z0-9]{8,20}$/.test(vin)) return show('err', 'The voter card number should be 8 to 20 letters and numbers, or leave it empty.');
+  if (!intent) return show('err', 'Choose Yes, Maybe or No.');
+  if (!$('consent').checked) return show('err', 'The person must tick the consent box before you save.');
+
+  const l = find(lgas, lgaV), w = find(wards, wardV), u = find(units, puV, x => x.label);
+  const row = {
+    full_name: name, phone, date_of_birth: dob,
+    lga_id: l ? l.id : null, lga_other: l ? null : lgaV,
+    ward_id: w ? w.id : null, ward_other: w ? null : wardV,
+    polling_unit_id: u ? u.id : null, pu_other: u ? null : puV,
+    voter_card_number: vin || null, voting_intent: intent, consent_given: true
+  };
+  $('submit').disabled = true;
+  const { error } = await sb.from('supporters').insert(row);
+  $('submit').disabled = false;
+  if (error) {
+    if (error.code === '23505') return show('err', 'This phone number is already recorded.');
+    if (error.code === '42501') return show('err', 'You are not allowed to save. Sign out and sign in again.');
+    return show('err', 'Could not save. Check your internet and try again.');
+  }
+  saved++;
+  show('ok', 'Saved. Ready for the next person.');
+  $('count').textContent = `Saved on this phone this session: ${saved}`;
+  ['name','phone','dob','pu','vin','code'].forEach(id => $(id).value = '');
+  $('consent').checked = false;
+  document.querySelectorAll('input[name=intent]').forEach(r => r.checked = false);
+  $('codeHint').textContent = 'Type the code and we will fill the three boxes below.';
+  hints(); window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+</body>
+</html>

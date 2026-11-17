@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin | GEN-Z FOR GALADIMA 2027</title>
+<meta name="theme-color" content="#0a4d2e">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&family=Figtree:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--green:#0a4d2e;--deep:#06331e;--sun:#ffc93c;--paper:#f5f8f4;--text:#14281d;--muted:#4d6155;--line:#cfdcd3;--display:"Bricolage Grotesque","Arial Black",sans-serif;--body:"Figtree",system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--body);background:var(--paper);color:var(--text);line-height:1.45}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.bar{background:var(--green);color:#fff}
+.bar>div{width:min(1100px,100% - 2rem);margin:auto;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding-block:.85rem;flex-wrap:wrap}
+.brand{font-family:var(--display);font-weight:800}
+.bar .acts{display:flex;gap:.5rem}
+button,.btn{font:inherit;cursor:pointer}
+.bar button{background:none;border:1px solid rgba(255,255,255,.55);color:#fff;font-size:.9rem;padding:.4rem .8rem;border-radius:.35rem}
+.bar button.main{background:var(--sun);border-color:var(--sun);color:var(--deep);font-weight:600}
+main{width:min(1100px,100% - 2rem);margin:1.25rem auto 4rem}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:.7rem}
+@media(min-width:760px){.stats{grid-template-columns:repeat(6,1fr)}}
+.stat{background:#fff;border:1px solid var(--line);border-radius:.5rem;padding:.8rem .9rem}
+.stat b{display:block;font-family:var(--display);font-size:1.9rem;line-height:1.1;color:var(--green)}
+.stat span{font-size:.88rem;color:var(--muted)}
+details{margin-top:1rem;background:#fff;border:1px solid var(--line);border-radius:.5rem}
+summary{padding:.8rem 1rem;font-weight:600;cursor:pointer}
+.tw{overflow-x:auto;padding:0 1rem 1rem}
+table{border-collapse:collapse;width:100%;font-size:.95rem}
+th,td{text-align:left;padding:.45rem .6rem;border-bottom:1px solid var(--line);white-space:nowrap}
+td.n,th.n{text-align:right}
+tr.lg{cursor:pointer}tr.lg:hover{background:#eef4ef}
+.filters{display:grid;gap:.6rem;margin-top:1.1rem}
+@media(min-width:760px){.filters{grid-template-columns:2fr 1fr 1fr 1fr}}
+.filters input,.filters select{width:100%;padding:.7rem .8rem;font:inherit;border:2px solid #b9c9be;border-radius:.4rem;background:#fff}
+.meta{margin:.9rem 0 .4rem;color:var(--muted);font-size:.92rem}
+#list{display:grid;gap:.4rem}
+.row{display:grid;grid-template-columns:1fr auto;gap:.2rem .8rem;text-align:left;width:100%;background:#fff;border:1px solid var(--line);border-radius:.45rem;padding:.75rem .9rem}
+.row:hover{border-color:var(--green)}
+.row .nm{font-weight:600}
+.row .sb{grid-column:1;font-size:.9rem;color:var(--muted)}
+.row .lg2{grid-column:2;grid-row:1/3;align-self:center;text-align:right;font-size:.9rem}
+.badge{display:inline-block;font-size:.8rem;font-weight:600;padding:.12rem .55rem;border-radius:1rem;margin-top:.2rem}
+.badge.yes{background:#d6f0de;color:#0a4d2e}.badge.maybe{background:#fff0c2;color:#6b4a00}.badge.no{background:#ebe7e7;color:#5a2323}
+#more{display:block;margin:1rem auto;padding:.7rem 1.4rem;border:2px solid var(--green);background:#fff;color:var(--green);border-radius:.4rem;font-weight:600}
+.empty{padding:2rem 1rem;text-align:center;color:var(--muted);background:#fff;border:1px dashed var(--line);border-radius:.5rem}
+dialog{border:0;border-radius:.7rem;padding:0;width:min(34rem,calc(100% - 1.5rem));max-height:90vh;overflow:auto;color:var(--text)}
+dialog::backdrop{background:rgba(6,51,30,.6)}
+.dh{background:var(--green);color:#fff;padding:1.1rem 1.3rem}
+.dh h2{font-family:var(--display);font-size:1.5rem;line-height:1.15}
+.dh .badge{margin-top:.5rem}
+dl{padding:.6rem 1.3rem;display:grid;grid-template-columns:9rem 1fr;gap:.55rem .8rem}
+dt{color:var(--muted);font-size:.92rem}dd{font-weight:600;word-break:break-word}
+dd a{font-weight:600;color:var(--green);margin-left:.5rem}
+dd i{font-weight:400;font-size:.82rem;background:#fff3cd;color:#7a5200;padding:.05rem .4rem;border-radius:.3rem;font-style:normal;margin-left:.4rem}
+.dact{display:flex;justify-content:space-between;gap:.6rem;padding:1rem 1.3rem 1.3rem}
+.dact button{padding:.7rem 1.1rem;border-radius:.4rem;border:2px solid var(--green);background:#fff;color:var(--green);font-weight:600}
+.dact .del{border-color:#b42318;color:#b42318}
+</style>
+</head>
+<body hidden>
+<header class="bar"><div>
+  <span class="brand">GEN-Z FOR GALADIMA 2027 · Admin</span>
+  <span class="acts"><button id="exp" class="main" type="button">Export CSV</button><button id="survey" type="button">Open survey</button><button id="out" type="button">Sign out</button></span>
+</div></header>
+
+<main>
+  <section class="stats" aria-label="Totals" id="stats"></section>
+
+  <details id="lgaBox"><summary>Results by LGA</summary><div class="tw"><table id="lgaT"></table></div></details>
+
+  <div class="filters">
+    <input id="q" type="search" placeholder="Search name, phone, ward or polling unit" aria-label="Search">
+    <select id="fl" aria-label="LGA"><option value="">All LGAs</option></select>
+    <select id="fi" aria-label="Answer"><option value="">All answers</option><option value="yes">Yes</option><option value="maybe">Maybe</option><option value="no">No</option></select>
+    <select id="fc" aria-label="Recorded by"><option value="">All coordinators</option></select>
+  </div>
+  <p class="meta" id="meta"></p>
+  <div id="list"></div>
+  <button id="more" type="button" hidden>Show more</button>
+</main>
+
+<dialog id="dlg" aria-label="Person details"><div id="dbody"></div></dialog>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js"></script>
+<script src="config.js"></script>
+<script>
+const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm = s => String(s || '').toLowerCase().replace(/\s+/g, ' ').trim();
+const LBL = { yes: 'Yes', maybe: 'Maybe', no: 'No' };
+const fd = d => d ? new Date(d).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : '';
+const fdt = d => d ? new Date(d).toLocaleString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' }) : '';
+let all = [], view = [], shown = 50;
+
+(async () => {
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) { location.href = 'login.html'; return; }
+  const { data: p } = await sb.from('profiles').select('role').eq('id', session.user.id).single();
+  if (!p || p.role !== 'admin') { location.href = 'survey.html'; return; }
+  document.body.hidden = false;
+  if (innerWidth > 800) $('lgaBox').open = true;
+  await loadAll();
+})();
+
+async function loadAll() {
+  $('meta').textContent = 'Loading...';
+  all = [];
+  for (let from = 0; ; from += 1000) {
+    const { data, error } = await sb.from('supporter_details').select('*')
+      .order('created_at', { ascending: false }).order('id').range(from, from + 999);
+    if (error) { $('meta').textContent = ''; $('list').innerHTML = '<div class="empty">Could not load the data: ' + esc(error.message) + '</div>'; return; }
+    all.push(...data);
+    if (data.length < 1000) break;
+  }
+  fillFilters(); apply(); drawLga();
+}
+
+function fillFilters() {
+  const keep = { fl: $('fl').value, fc: $('fc').value };
+  const opts = (key, first, vals) => { $(key).innerHTML = `<option value="">${first}</option>` + vals.map(v => `<option>${esc(v)}</option>`).join(''); $(key).value = vals.includes(keep[key]) ? keep[key] : ''; };
+  const uniq = k => [...new Set(all.map(r => r[k]).filter(Boolean))].sort((a, b) => a.localeCompare(b));
+  opts('fl', 'All LGAs', uniq('lga')); opts('fc', 'All coordinators', uniq('coordinator'));
+}
+
+function apply() {
+  const q = norm($('q').value), lga = $('fl').value, it = $('fi').value, co = $('fc').value;
+  view = all.filter(r => (!lga || r.lga === lga) && (!it || r.voting_intent === it) && (!co || r.coordinator === co) &&
+    (!q || norm([r.full_name, r.phone, '0' + String(r.phone).slice(4), r.ward, r.polling_unit, r.pu_code].join(' ')).includes(q)));
+  shown = 50; draw();
+}
+
+function draw() {
+  const c = k => view.filter(r => r.voting_intent === k).length;
+  const pus = new Set(view.map(r => r.pu_code || [r.lga, r.ward, r.polling_unit].join('|'))).size;
+  const S = [[view.length, 'People recorded'], [c('yes'), 'Yes'], [c('maybe'), 'Maybe'], [c('no'), 'No'],
+    [view.filter(r => r.voter_card_number).length, 'With voter card number'], [pus, 'Polling units reached']];
+  $('stats').innerHTML = S.map(([n, l]) => `<div class="stat"><b>${n}</b><span>${l}</span></div>`).join('');
+  $('meta').textContent = `Showing ${Math.min(shown, view.length)} of ${view.length}` + (view.length !== all.length ? ` (${all.length} in total)` : '');
+  $('list').innerHTML = view.length ? view.slice(0, shown).map((r, i) => `
+    <button class="row" type="button" data-i="${i}">
+      <span class="nm">${esc(r.full_name)}</span>
+      <span class="lg2">${esc(r.lga)}<br><span class="badge ${esc(r.voting_intent)}">${esc(LBL[r.voting_intent])}</span></span>
+      <span class="sb">${esc(r.phone)} · ${esc(r.ward)} · ${esc(r.polling_unit)}</span>
+    </button>`).join('') : '<div class="empty">No one matches yet. Change the filters, or record people with the survey form.</div>';
+  $('more').hidden = shown >= view.length;
+}
+
+function drawLga() {
+  const m = {};
+  all.forEach(r => { const k = r.lga || 'Unknown'; (m[k] = m[k] || { t: 0, yes: 0, maybe: 0, no: 0 }); m[k].t++; m[k][r.voting_intent]++; });
+  const rows = Object.entries(m).sort((a, b) => b[1].t - a[1].t);
+  $('lgaT').innerHTML = '<tr><th>LGA</th><th class="n">Total</th><th class="n">Yes</th><th class="n">Maybe</th><th class="n">No</th></tr>' +
+    (rows.map(([k, v]) => `<tr class="lg" data-lga="${esc(k)}"><td>${esc(k)}</td><td class="n">${v.t}</td><td class="n">${v.yes}</td><td class="n">${v.maybe}</td><td class="n">${v.no}</td></tr>`).join('') ||
+    '<tr><td colspan="5">No data yet.</td></tr>');
+}
+
+function openDetail(r) {
+  const dob = r.date_of_birth ? new Date(r.date_of_birth) : null;
+  const age = dob ? Math.floor((Date.now() - dob) / 31557600000) : null;
+  const typed = f => f ? '<i>typed in</i>' : '';
+  const digits = String(r.phone).replace(/\D/g, '');
+  $('dbody').innerHTML = `
+    <div class="dh"><h2>${esc(r.full_name)}</h2><span class="badge ${esc(r.voting_intent)}">${esc(LBL[r.voting_intent])}</span></div>
+    <dl>
+      <dt>Phone</dt><dd>${esc(r.phone)} <a href="tel:${esc(r.phone)}">Call</a> <a href="https://wa.me/${digits}" target="_blank" rel="noopener">WhatsApp</a></dd>
+      <dt>Date of birth</dt><dd>${esc(fd(r.date_of_birth))}${age != null ? ' (' + age + ' years)' : ''}</dd>
+      <dt>LGA</dt><dd>${esc(r.lga)}${typed(r.lga_typed)}</dd>
+      <dt>Ward</dt><dd>${esc(r.ward)}${typed(r.ward_typed)}</dd>
+      <dt>Polling unit</dt><dd>${esc(r.polling_unit)}${typed(r.pu_typed)}${r.pu_code ? '<br><small>Code ' + esc(r.pu_code) + '</small>' : ''}</dd>
+      <dt>Voter card number</dt><dd>${esc(r.voter_card_number || 'Not given')}</dd>
+      <dt>Recorded by</dt><dd>${esc(r.coordinator || 'Unknown')}</dd>
+      <dt>Recorded on</dt><dd>${esc(fdt(r.created_at))}</dd>
+      <dt>Consent given</dt><dd>${esc(fdt(r.consent_at))}</dd>
+    </dl>
+    <div class="dact"><button class="del" id="del" type="button">Delete entry</button><button id="cls" type="button">Close</button></div>`;
+  $('cls').onclick = () => $('dlg').close();
+  $('del').onclick = async () => {
+    if (!confirm('Delete ' + r.full_name + '? This cannot be undone.')) return;
+    const { error } = await sb.from('supporters').delete().eq('id', r.id);
+    if (error) { alert('Could not delete: ' + error.message); return; }
+    all = all.filter(x => x.id !== r.id); $('dlg').close(); fillFilters(); apply(); drawLga();
+  };
+  $('dlg').showModal();
+}
+
+// events
+$('list').addEventListener('click', e => { const b = e.target.closest('.row'); if (b) openDetail(view[+b.dataset.i]); });
+$('lgaT').addEventListener('click', e => { const t = e.target.closest('tr.lg'); if (t) { $('fl').value = t.dataset.lga; apply(); $('q').scrollIntoView({ behavior: 'smooth', block: 'center' }); } });
+$('more').onclick = () => { shown += 50; draw(); };
+['q'].forEach(id => $(id).addEventListener('input', apply));
+['fl', 'fi', 'fc'].forEach(id => $(id).addEventListener('change', apply));
+$('dlg').addEventListener('click', e => { if (e.target === $('dlg')) $('dlg').close(); });
+$('out').onclick = async () => { await sb.auth.signOut(); location.href = 'login.html'; };
+$('survey').onclick = () => { location.href = 'survey.html'; };
+
+// CSV export of whatever is currently filtered
+$('exp').onclick = () => {
+  const safe = v => { let s = String(v == null ? '' : v); if (/^[=+\-@\t\r]/.test(s)) s = "'" + s; return '"' + s.replace(/"/g, '""') + '"'; };
+  const head = ['Name','Phone','Date of birth','LGA','Ward','Polling unit','Polling unit code','Voter card number','Answer','Recorded by','Recorded on'];
+  const lines = [head.map(safe).join(',')].concat(view.map(r => [
+    safe(r.full_name), '"' + r.phone + '"', safe(r.date_of_birth), safe(r.lga), safe(r.ward), safe(r.polling_unit), safe(r.pu_code),
+    safe(r.voter_card_number), safe(LBL[r.voting_intent]), safe(r.coordinator), safe(fdt(r.created_at))].join(',')));
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob(['\ufeff' + lines.join('\r\n')], { type: 'text/csv;charset=utf-8' }));
+  a.download = 'genz-galadima-supporters-' + new Date().toISOString().slice(0, 10) + '.csv';
+  a.click(); URL.revokeObjectURL(a.href);
+};
+</script>
+</body>
+</html>

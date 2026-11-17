@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GEN-Z FOR GALADIMA 2027 · A movement for Adamawa</title>
+  <meta name="description" content="The youth-powered movement for Galadima 2027. Meet the candidate, explore the public record, and join a new generation of civic engagement in Adamawa State.">
+  <meta name="theme-color" content="#0a4d2e">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%230a4d2e'/%3E%3Ctext x='50' y='66' font-size='52' font-weight='900' text-anchor='middle' fill='%23ffc93c' font-family='Arial'%3EGZ%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ---------- design tokens ---------- */
+    :root {
+      --green: #0a4d2e;
+      --green-deep: #06331e;
+      --sun: #ffc93c;
+      --sun-soft: #ffe08a;
+      --paper: #f5f8f4;
+      --text: #14281d;
+      --muted: #3d5a4a;
+      --border-soft: #d7e3da;
+      --display: "Bricolage Grotesque", "Arial Black", Impact, sans-serif;
+      --body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      --shadow-sm: 0 4px 12px rgba(6, 51, 30, 0.06);
+      --shadow-md: 0 12px 32px rgba(6, 51, 30, 0.10);
+      --radius-md: 1.25rem;
+      --radius-lg: 2rem;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 6rem;
+    }
+
+    body {
+      font-family: var(--body);
+      color: var(--text);
+      background: var(--paper);
+      line-height: 1.6;
+      font-size: 1.0625rem;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+      height: auto;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--sun);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    .wrap {
+      width: min(1200px, 100% - 2.5rem);
+      margin-inline: auto;
+    }
+
+    /* ---------- typography ---------- */
+    .eyebrow {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--sun);
+    }
+
+    .eyebrow-dark {
+      color: var(--green);
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--display);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 5vw, 3.25rem);
+      max-width: 18ch;
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+    }
+
+    .lead {
+      font-size: clamp(1.1rem, 2vw, 1.3rem);
+      color: var(--muted);
+      max-width: 42rem;
+    }
+
+    .lead-on-dark {
+      color: #d4e6da;
+    }
+
+    /* ---------- buttons ---------- */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--body);
+      font-weight: 600;
+      text-decoration: none;
+      padding: 0.95rem 1.6rem;
+      border-radius: 0.65rem;
+      font-size: 1rem;
+      border: 2px solid transparent;
+      transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-main {
+      background: var(--sun);
+      color: var(--green-deep);
+    }
+
+    .btn-main:hover {
+      background: var(--sun-soft);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      border-color: rgba(255, 255, 255, 0.5);
+      color: #fff;
+    }
+
+    .btn-ghost:hover {
+      border-color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .btn-dark {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn-dark:hover {
+      background: var(--green-deep);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-dark {
+      border-color: var(--green);
+      color: var(--green);
+    }
+
+    .btn-outline-dark:hover {
+      background: var(--green);
+      color: #fff;
+    }
+
+    .btn svg {
+      flex-shrink: 0;
+    }
+
+    /* ---------- navigation ---------- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--green);
+      color: #fff;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .nav-wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-block: 0.9rem;
+      gap: 1.5rem;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      color: #fff;
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: 1.05rem;
+      letter-spacing: 0.01em;
+      line-height: 1.15;
+    }
+
+    .brand-mark span {
+      color: var(--sun);
+    }
+
+    .brand-icon {
+      width: 2.1rem;
+      height: 2.1rem;
+      background: var(--sun);
+      border-radius: 0.55rem;
+      display: grid;
+      place-items: center;
+      color: var(--green-deep);
+      font-size: 0.85rem;
+      font-weight: 900;
+      flex-shrink: 0;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.6rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.92rem;
+      font-weight: 500;
+      text-decoration: none;
+      color: #d9ebe0;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .nav-cta {
+      background: var(--sun) !important;
+      color: var(--green-deep) !important;
+      padding: 0.55rem 1.1rem !important;
+      border-radius: 0.5rem;
+      font-weight: 700 !important;
+      text-decoration: none !important;
+    }
+
+    .nav-cta:hover {
+      background: var(--sun-soft) !important;
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      color: #fff;
+      line-height: 0;
+    }
+
+    .menu-toggle svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--green-deep);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 1.25rem 1.5rem 1.75rem;
+        gap: 0.85rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        font-size: 1rem;
+        padding: 0.35rem 0;
+      }
+
+      .nav-cta {
+        align-self: flex-start;
+        margin-top: 0.25rem;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+    }
+
+    /* ---------- hero ---------- */
+    .hero {
+      position: relative;
+      background: var(--green);
+      color: #fff;
+      overflow: hidden;
+      min-height: clamp(540px, 92vh, 860px);
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      width: 100%;
+      position: relative;
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 25%;
+      opacity: 0.9;
+    }
+
+    /* gradient overlay */
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(6, 51, 30, 0.92) 0%, rgba(6, 51, 30, 0.55) 40%, rgba(6, 51, 30, 0.1) 75%, rgba(6, 51, 30, 0.2) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-block: clamp(4rem, 12vw, 8rem) clamp(3rem, 7vw, 5.5rem);
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      width: 100%;
+    }
+
+    .hero-eyebrow-wrap {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .hero-eyebrow-wrap .line {
+      width: 2.5rem;
+      height: 3px;
+      background: var(--sun);
+      border-radius: 99px;
+    }
+
+    .hero h1 {
+      font-size: clamp(3rem, 11vw, 7.5rem);
+      line-height: 0.9;
+      letter-spacing: -0.03em;
+      max-width: 12ch;
+      color: #fff;
+      text-wrap: balance;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--sun);
+    }
+
+    .hero .hero-lead {
+      max-width: 32rem;
+      font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+      color: #d9ebe0;
+      line-height: 1.6;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .election-badge {
+      position: absolute;
+      top: clamp(1.5rem, 4vw, 3rem);
+      right: clamp(1.5rem, 4vw, 3rem);
+      z-index: 3;
+      background: var(--sun);
+      color: var(--green-deep);
+      font-family: var(--display);
+      font-weight: 800;
+      font-size: clamp(0.8rem, 1.5vw, 1rem);
+      letter-spacing: 0.1em;
+      padding: 0.6rem 1.2rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* yellow accent bar */
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: clamp(10px, 2vw, 22px);
+      background: var(--sun);
+      z-index: 3;
+    }
+
+    /* entrance animation */
+    @media (prefers-reduced-motion: no-preference) {
+      .hero h1 {
+        animation: rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+
+      .hero-eyebrow-wrap {
+        animation: rise 0.8s 0.1s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+
+      .hero .hero-lead {
+        animation: rise 0.8s 0.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+
+      .hero-actions {
+        animation: rise 0.8s 0.3s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+      }
+
+      .election-badge {
+        animation: fadeIn 0.8s 0.5s both;
+      }
+
+      @keyframes rise {
+        from {
+          opacity: 0;
+          transform: translateY(0.5em);
+        }
+
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+    }
+
+    /* ---------- section shells ---------- */
+    section {
+      padding-block: clamp(3.5rem, 8vw, 6.5rem);
+    }
+
+    .section-head {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: clamp(2rem, 5vw, 3.5rem);
+    }
+
+    .section-head .lead {
+      margin-top: 0.5rem;
+    }
+
+    /* ---------- meet galadima ---------- */
+    .meet-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(2rem, 5vw, 4rem);
+      align-items: start;
+    }
+
+    @media (min-width: 840px) {
+      .meet-grid {
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: clamp(2rem, 6vw, 5rem);
+      }
+    }
+
+    .portrait-frame {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      background: #dce8e0;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+    }
+
+    .portrait-frame::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--sun);
+    }
+
+    .portrait-caption {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      background: rgba(6, 51, 30, 0.85);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.35rem 0.85rem;
+      border-radius: 99px;
+      backdrop-filter: blur(4px);
+    }
+
+    .meet-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .meet-copy h2 {
+      max-width: 16ch;
+    }
+
+    .profile-tag {
+      display: inline-block;
+      background: var(--sun);
+      color: var(--green-deep);
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      padding: 0.35rem 0.9rem;
+      border-radius: 99px;
+      width: fit-content;
+    }
+
+    .bio-text {
+      color: var(--muted);
+      max-width: 48ch;
+    }
+
+    .bio-text + .bio-text {
+      margin-top: 0.85rem;
+    }
+
+    .facts-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-top: 0.5rem;
+      border-top: 2px solid var(--green);
+      padding-top: 1.5rem;
+    }
+
+    .fact b {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.4rem;
+      color: var(--green);
+      line-height: 1.2;
+    }
+
+    .fact span {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .achievement-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-top: 0.5rem;
+    }
+
+    .achievement-list li {
+      display: flex;
+      gap: 0.85rem;
+      align-items: flex-start;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .achievement-list li::before {
+      content: "";
+      flex-shrink: 0;
+      width: 1.4rem;
+      height: 1.4rem;
+      margin-top: 0.15rem;
+      background: var(--green);
+      border-radius: 50%;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") center / 0.8rem no-repeat;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'%3E%3C/polyline%3E%3C/svg%3E") center / 0.8rem no-repeat;
+    }
+
+    /* ---------- video section ---------- */
+    .video-section {
+      background: var(--green-deep);
+      color: #fff;
+    }
+
+    .video-section .section-head .lead {
+      color: #b8d4c4;
+    }
+
+    .video-section h2 {
+      color: #fff;
+    }
+
+    .video-shell {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+      aspect-ratio: 16 / 9;
+      background: #0b2b1b;
+      cursor: pointer;
+    }
+
+    .video-shell img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.85;
+      transition: transform 0.6s ease, opacity 0.4s ease;
+    }
+
+    .video-shell:hover img {
+      transform: scale(1.03);
+      opacity: 0.75;
+    }
+
+    .video-overlay {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(to top, rgba(6, 51, 30, 0.7) 0%, transparent 50%);
+    }
+
+    .play-btn {
+      width: clamp(4rem, 9vw, 6rem);
+      height: clamp(4rem, 9vw, 6rem);
+      border-radius: 50%;
+      background: var(--sun);
+      border: none;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.2s;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .play-btn:hover {
+      transform: scale(1.1);
+      background: var(--sun-soft);
+    }
+
+    .play-btn svg {
+      width: 40%;
+      height: 40%;
+      fill: var(--green-deep);
+      margin-left: 4px;
+    }
+
+    .video-caption {
+      position: absolute;
+      left: clamp(1rem, 3vw, 2rem);
+      bottom: clamp(1rem, 3vw, 2rem);
+      right: clamp(1rem, 3vw, 2rem);
+      z-index: 2;
+    }
+
+    .video-caption h3 {
+      color: #fff;
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      max-width: 28ch;
+    }
+
+    .video-caption p {
+      color: #c5d6cb;
+      font-size: 0.9rem;
+      margin-top: 0.25rem;
+    }
+
+    .video-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      color: #9fb8a9;
+    }
+
+    .video-meta span {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ---------- public record ---------- */
+    .record-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    @media (min-width: 700px) {
+      .record-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+      }
+    }
+
+    .record-card {
+      background: #fff;
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      padding: clamp(1.5rem, 3vw, 2rem);
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .record-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-3px);
+    }
+
+    .record-tag {
+      font-family: var(--display);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--green);
+      background: #e3f0e8;
+      padding: 0.3rem 0.75rem;
+      border-radius: 99px;
+      width: fit-content;
+    }
+
+    .record-card h3 {
+      font-size: 1.2rem;
+      line-height: 1.25;
+    }
+
+    .record-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      flex-grow: 1;
+    }
+
+    .record-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-weight: 600;
+      font-size: 0.88rem;
+      color: var(--green);
+      text-decoration: none;
+      margin-top: 0.5rem;
+      width: fit-content;
+    }
+
+    .record-link svg {
+      transition: transform 0.15s;
+    }
+
+    .record-link:hover svg {
+      transform: translateX(3px);
+    }
+
+    .record-link:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .record-meta {
+      font-size: 0.78rem;
+      color: #6b8577;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 0.75rem;
+      margin-top: auto;
+    }
+
+    /* ---------- gallery ---------- */
+    .gallery-section {
+      background: #e9f0ea;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.85rem;
+    }
+
+    @media (min-width: 700px) {
+      .gallery-grid {
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 200px;
+        gap: 1rem;
+      }
+
+      .gallery-item:nth-child(1) {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+
+      .gallery-item:nth-child(4) {
+        grid-column: span 2;
+      }
+
+      .gallery-item:nth-child(6) {
+        grid-row: span 2;
+      }
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      background: #c9d9cf;
+      cursor: pointer;
+      aspect-ratio: 1 / 1;
+    }
+
+    @media (min-width: 700px) {
+      .gallery-item {
+        aspect-ratio: auto;
+      }
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.3s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+      filter: brightness(0.85);
+    }
+
+    .gallery-item .gallery-label {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem 1rem 0.85rem;
+      background: linear-gradient(to top, rgba(6, 51, 30, 0.85), transparent);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.25s, transform 0.25s;
+    }
+
+    .gallery-item:hover .gallery-label,
+    .gallery-item:focus-visible .gallery-label {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* lightbox */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(6, 24, 14, 0.94);
+      display: none;
+      place-items: center;
+      padding: 2rem;
+      backdrop-filter: blur(6px);
+    }
+
+    .lightbox.active {
+      display: grid;
+    }
+
+    .lightbox img {
+      max-width: min(1000px, 90vw);
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: var(--radius-md);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .lightbox-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      color: #fff;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      font-size: 1.4rem;
+      transition: background 0.15s;
+    }
+
+    .lightbox-close:hover {
+      background: rgba(255, 255, 255, 0.25);
+    }
+
+    /* updates strip */
+    .updates-strip {
+      margin-top: 2.5rem;
+      background: #fff;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-soft);
+      padding: clamp(1.25rem, 3vw, 2rem);
+    }
+
+    .updates-strip h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .updates-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .updates-list li {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.5rem 0.85rem;
+      font-size: 0.92rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-soft);
+    }
+
+    .updates-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .updates-list time {
+      font-weight: 600;
+      color: var(--green);
+      font-size: 0.8rem;
+      white-space: nowrap;
+      min-width: 6.5rem;
+    }
+
+    .updates-list a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .updates-list a:hover {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      color: var(--green);
+    }
+
+    .updates-list .source {
+      font-size: 0.78rem;
+      color: #6b8577;
+      margin-left: auto;
+    }
+
+    /* ---------- adamawa ---------- */
+    .adamawa-section {
+      background: var(--paper);
+    }
+
+    .adamawa-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (min-width: 800px) {
+      .adamawa-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: clamp(2rem, 5vw, 4rem);
+      }
+    }
+
+    .adamawa-media {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+      position: relative;
+    }
+
+    .adamawa-media img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .adamawa-media .tag {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      background: var(--sun);
+      color: var(--green-deep);
+      font-weight: 700;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      padding: 0.35rem 0.9rem;
+      border-radius: 99px;
+      text-transform: uppercase;
+    }
+
+    .adamawa-copy {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .adamawa-copy h2 {
+      max-width: 14ch;
+    }
+
+    .adamawa-copy p {
+      color: var(--muted);
+      max-width: 48ch;
+    }
+
+    .adamawa-facts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem 2.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .adamawa-facts div b {
+      display: block;
+      font-family: var(--display);
+      font-size: 1.5rem;
+      color: var(--green);
+      line-height: 1.2;
+    }
+
+    .adamawa-facts div span {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    /* ---------- footer ---------- */
+    .site-footer {
+      background: var(--green-deep);
+      color: #b8d4c4;
+      padding-block: clamp(2.5rem, 6vw, 4rem) 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    @media (min-width: 700px) {
+      .footer-grid {
+        grid-template-columns: 1.4fr 0.8fr 0.8fr 1fr;
+        gap: 2rem;
+      }
+    }
+
+    .footer-brand {
+      font-family: var(--display);
+      font-weight: 800;
+      color: #fff;
+      font-size: 1.15rem;
+      text-decoration: none;
+      line-height: 1.2;
+    }
+
+    .footer-brand span {
+      color: var(--sun);
+    }
+
+    .footer-about {
+      margin-top: 1rem;
+      max-width: 28ch;
+      color: #94b5a2;
+      font-size: 0.88rem;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-family: var(--body);
+    }
+
+    .footer-col ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .footer-col a {
+      color: #b8d4c4;
+      text-decoration: none;
+      font-size: 0.88rem;
+    }
+
+    .footer-col a:hover {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 0.6rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .social-row a {
+      width: 2.4rem;
+      height: 2.4rem;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      display: grid;
+      place-items: center;
+      transition: background 0.15s;
+      color: #fff;
+    }
+
+    .social-row a:hover {
+      background: var(--sun);
+      color: var(--green-deep);
+    }
+
+    .social-row svg {
+      width: 1rem;
+      height: 1rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      padding-top: 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem 1.5rem;
+      font-size: 0.8rem;
+      color: #7fa38d;
+    }
+
+    .footer-bottom a {
+      color: #b8d4c4;
+      text-decoration: none;
+    }
+
+    .footer-bottom a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* survey CTA banner */
+    .survey-banner {
+      background: var(--sun);
+      color: var(--green-deep);
+      border-radius: var(--radius-lg);
+      padding: clamp(2rem, 5vw, 3rem);
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-block: clamp(2rem, 5vw, 3rem);
+      box-shadow: var(--shadow-md);
+    }
+
+    .survey-banner h2 {
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      max-width: 22ch;
+      color: var(--green-deep);
+    }
+
+    .survey-banner p {
+      color: #2b4d39;
+      font-weight: 500;
+      max-width: 36ch;
+      font-size: 0.95rem;
+    }
+
+    /* reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <header class="site-header">
+    <div class="wrap nav-wrap">
+      <a class="brand-mark" href="/" aria-label="GEN-Z FOR GALADIMA 2027 — home">
+        <span class="brand-icon">GZ</span>
+        <span>GEN-Z FOR GALADIMA<br><span style="color:var(--sun);">2027</span></span>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" aria-controls="navLinks">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="/" aria-current="page">Home</a></li>
+        <li><a href="#about">About Galadima</a></li>
+        <li><a href="#record">Public Record</a></li>
+        <li><a href="#media">Media</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="survey.html" class="nav-cta">Take the survey →</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="election-badge">Adamawa 2027</span>
+
+      <div class="hero-grid">
+        <div class="hero-media">
+          <!-- 👇 REPLACE THIS IMAGE SOURCE WITH YOUR OWN PHOTO -->
+          <!-- Example: <img src="images/candidate-hero.jpg" alt="Galadima speaking to a crowd"> -->
+          <img src="IMG_7500.PNG" alt="Galadima — candidate for Adamawa 2027" width="1200" height="900" loading="eager">
+        </div>
+
+        <div class="wrap hero-content">
+          <div class="hero-eyebrow-wrap">
+            <span class="line"></span>
+            <span class="eyebrow">A new generation of leadership</span>
+          </div>
+          <h1 id="hero-title">GEN-Z<br>FOR<br><em>GALADIMA</em><br>2027</h1>
+          <p class="hero-lead">Young people in Adamawa have a lot to say about who leads the state. This is the movement that listens — and acts.</p>
+          <div class="hero-actions">
+            <a class="btn btn-main" href="survey.html">Take the survey</a>
+            <a class="btn btn-ghost" href="#about">Meet Galadima</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEET GALADIMA ===== -->
+    <section id="about" aria-labelledby="about-title">
+      <div class="wrap">
+        <div class="meet-grid">
+          <div class="portrait-frame">
+            <!-- 👇 REPLACE WITH YOUR PORTRAIT PHOTO -->
+            <!-- Example: <img src="images/candidate-portrait.jpg" alt="Official portrait of Galadima"> -->
+            <img src="IMG_7501.PNG" alt="Official portrait of Galadima" width="640" height="800" loading="lazy">
+            <span class="portrait-caption">Official portrait · Galadima</span>
+          </div>
+
+          <div class="meet-copy">
+            <span class="profile-tag">Meet the candidate</span>
+            <h2 id="about-title">Galadima — a public servant rooted in Adamawa</h2>
+            <p class="bio-text">Galadima has spent his career working across Adamawa State, from community-level initiatives to public service roles. His record reflects a commitment to education, infrastructure, and youth empowerment — grounded in verifiable service rather than rhetoric.</p>
+            <p class="bio-text">This section will be updated with his full official profile, professional background, public service history, and documented achievements as the campaign develops. Every claim will be supported by verifiable sources.</p>
+
+            <div class="facts-row">
+              <div class="fact">
+                <b>Adamawa</b>
+                <span>Home state</span>
+              </div>
+              <div class="fact">
+                <b>Public service</b>
+                <span>Career focus</span>
+              </div>
+              <div class="fact">
+                <b>Youth</b>
+                <span>Priority area</span>
+              </div>
+            </div>
+
+            <ul class="achievement-list">
+              <li>Documented public service record — available on the Public Record page.</li>
+              <li>Community engagement across multiple LGAs in Adamawa State.</li>
+              <li>Professional experience to be listed with verifiable references.</li>
+            </ul>
+
+            <a class="btn btn-dark" href="#record" style="width:fit-content;margin-top:0.5rem;">View public record</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IN HIS OWN WORDS (VIDEO) ===== -->
+    <section id="media" class="video-section" aria-labelledby="video-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">In his own words</span>
+          <h2 id="video-title">Watch. Listen. Decide.</h2>
+          <p class="lead">Speeches, interviews, and public statements — unfiltered and on the record.</p>
+        </div>
+
+        <div class="video-shell" id="videoPlaceholder" role="button" tabindex="0" aria-label="Play video: Galadima speaks on youth and leadership">
+          <!-- 👇 REPLACE WITH YOUR OWN VIDEO THUMBNAIL IMAGE -->
+          <!-- Example: <img src="images/video-thumbnail.jpg" alt="Galadima speaking at a public event"> -->
+          <img src="images/v14044g50000d9udl5fog65rafmdl0r0.mp4" alt="Galadima speaking at a public event — video thumbnail" width="1280" height="720" loading="lazy">
+          <div class="video-overlay">
+            <button class="play-btn" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polygon points="6,3 20,12 6,21"/></svg>
+            </button>
+          </div>
+          <div class="video-caption">
+            <h3>Galadima on youth, leadership, and the future of Adamawa</h3>
+            <p>Recorded public address · Full video coming soon</p>
+          </div>
+        </div>
+
+        <div class="video-meta">
+          <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            YouTube embed ready
+          </span>
+          <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            Interviews · Speeches · Press statements
+          </span>
+          <span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>
+            No autoplay with sound
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PUBLIC RECORD ===== -->
+    <section id="record" aria-labelledby="record-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow eyebrow-dark">Public record</span>
+          <h2 id="record-title">Documented positions. Verified sources.</h2>
+          <p class="lead">Policy proposals, public statements, and relevant records — presented with supporting information and links to original sources. No invented achievements, endorsements, or statistics.</p>
+        </div>
+
+        <div class="record-grid">
+          <article class="record-card">
+            <span class="record-tag">Policy proposal</span>
+            <h3>Youth employment and skills development</h3>
+            <p>Documented proposals on expanding vocational training and creating pathways for young people in Adamawa's informal and formal economies.</p>
+            <a class="record-link" href="#" aria-label="Read more about youth employment policy proposal (placeholder link)">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <p class="record-meta">Placeholder · full document pending verification</p>
+          </article>
+
+          <article class="record-card">
+            <span class="record-tag">Public statement</span>
+            <h3>On education access in rural LGAs</h3>
+            <p>Public remarks on improving school infrastructure and teacher retention in underserved communities across Adamawa State.</p>
+            <a class="record-link" href="#" aria-label="Read more about education access statement (placeholder link)">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <p class="record-meta">Placeholder · source link will be added</p>
+          </article>
+
+          <article class="record-card">
+            <span class="record-tag">Public record</span>
+            <h3>Service history and community engagement</h3>
+            <p>A structured overview of documented public service roles and community initiatives, with verifiable references and dates.</p>
+            <a class="record-link" href="#" aria-label="Read more about service history (placeholder link)">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <p class="record-meta">Placeholder · verifiable references pending</p>
+          </article>
+
+          <article class="record-card">
+            <span class="record-tag">Press statement</span>
+            <h3>On accountable governance and transparency</h3>
+            <p>Recorded position on open budgets, citizen oversight, and the role of young people in holding institutions accountable.</p>
+            <a class="record-link" href="#" aria-label="Read more about governance statement (placeholder link)">
+              Read more
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </a>
+            <p class="record-meta">Placeholder · original source will be linked</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== GALLERY & UPDATES ===== -->
+    <section class="gallery-section" aria-labelledby="gallery-title">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow eyebrow-dark">Gallery &amp; updates</span>
+          <h2 id="gallery-title">From the ground up</h2>
+          <p class="lead">Photographs from public events, community engagements, and interviews — plus dated announcements with links to original sources.</p>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+          <!-- 👇 REPLACE THESE SRC VALUES WITH YOUR OWN IMAGES (small thumbnails) -->
+          <!-- 👇 ALSO UPDATE data-full WITH THE SAME IMAGE URL FOR THE LIGHTBOX -->
+          <div class="gallery-item" data-full="IMG_GALLERY_1_LARGE.jpg">
+            <img src="IMG_7502.PNG" alt="Galadima speaking at a public event" loading="lazy">
+            <span class="gallery-label">Public event · Adamawa</span>
+          </div>
+          <div class="gallery-item" data-full="IMG_GALLERY_2_LARGE.jpg">
+            <img src="IMG_7503.PNG" alt="Community engagement" loading="lazy">
+            <span class="gallery-label">Community engagement</span>
+          </div>
+          <div class="gallery-item" data-full="IMG_GALLERY_3_LARGE.jpg">
+            <img src="temp_image_B9A476F2-B4C8-41C7-AA15-EA89B56FFCA7.webp" alt="Galadima in an interview" loading="lazy">
+            <span class="gallery-label">Interview</span>
+          </div>
+          <div class="gallery-item" data-full="IMG_GALLERY_4_LARGE.jpg">
+            <img src="temp_image_E03F3A8D-41E8-4E31-8351-83AA25052D9D.webp" alt="Press appearance" loading="lazy">
+            <span class="gallery-label">Press appearance</span>
+          </div>
+          <div class="gallery-item" data-full="IMG_GALLERY_5_LARGE.jpg">
+            <img src="temp_image_112189C0-FCE2-48EF-9CC1-18B8CBF02F09.webp" alt="Youth town hall" loading="lazy">
+            <span class="gallery-label">Youth town hall</span>
+          </div>
+          
+        </div>
+
+        <!-- Updates -->
+        <div class="updates-strip">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--green)" stroke-width="2.2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Latest updates
+          </h3>
+          <ul class="updates-list">
+            <li>
+              <time datetime="2025-01-15">15 Jan 2025</time>
+              <a href="#">Movement announces youth listening tour across Adamawa LGAs</a>
+              <span class="source">Source: campaign release</span>
+            </li>
+            <li>
+              <time datetime="2025-01-08">8 Jan 2025</time>
+              <a href="#">Galadima meets with student leaders in Yola</a>
+              <span class="source">Source: press statement</span>
+            </li>
+            <li>
+              <time datetime="2024-12-20">20 Dec 2024</time>
+              <a href="#">Public record page launched with documented policy proposals</a>
+              <span class="source">Source: website update</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ADAMAWA STATE ===== -->
+    <section class="adamawa-section" aria-labelledby="adamawa-title">
+      <div class="wrap">
+        <div class="adamawa-grid">
+          <div class="adamawa-copy">
+            <span class="eyebrow eyebrow-dark">Adamawa State</span>
+            <h2 id="adamawa-title">The place we call home</h2>
+            <p>Adamawa State is home to diverse communities, rich cultural heritage, and remarkable landscapes — from the Mandara Mountains to the banks of the Benue River. This movement is rooted in Adamawa's people and committed to its future.</p>
+            <p>Explore authentic photography of Adamawa's communities, landmarks, and public spaces. This section will grow with contributions from across the state.</p>
+            <div class="adamawa-facts">
+              <div>
+                <b>21</b>
+                <span>Local Government Areas</span>
+              </div>
+              <div>
+                <b>Yola</b>
+                <span>Capital city</span>
+              </div>
+              <div>
+                <b>North-East</b>
+                <span>Geopolitical zone</span>
+              </div>
+            </div>
+            <a class="btn btn-outline-dark" href="#" style="width:fit-content;margin-top:0.5rem;">Explore Adamawa (coming soon)</a>
+          </div>
+
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SURVEY CTA ===== -->
+    <div class="wrap">
+      <div class="survey-banner">
+        <div>
+          <h2>Young people in Adamawa have a lot to say.</h2>
+          <p>Answer a short survey and tell us where you stand ahead of the 2027 governorship election. Two minutes, five questions.</p>
+        </div>
+        <a class="btn btn-dark" href="survey.html" style="flex-shrink:0;">Take the survey →</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" id="contact">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="/">GEN-Z FOR GALADIMA <span>2027</span></a>
+          <p class="footer-about">A youth-powered movement for a new generation of leadership in Adamawa State. This is a supporter-driven civic engagement platform.</p>
+          <div class="social-row">
+            <a href="#" aria-label="Twitter / X">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437H7.078v-3.49h3.047V9.41c0-3.025 1.792-4.697 4.533-4.697 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="#about">About Galadima</a></li>
+            <li><a href="#record">Public Record</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="survey.html">Take the survey</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:hello@genzforgaladima.org">hello@genzforgaladima.org</a></li>
+            <li><a href="tel:+23414717916">+234 147 179 16</a></li>
+            <li>Yola, Adamawa State<br>Nigeria</li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Information</h4>
+          <ul>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms of use</a></li>
+            <li><a href="#">Data deletion requests</a></li>
+            <li><a href="login.html">Canvasser login</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 GEN-Z FOR GALADIMA 2027. All rights reserved. This is a supporter-driven civic platform. It is not run by INEC and it is not voter registration.</p>
+        <p><a href="#">Privacy</a> · <a href="#">Accessibility</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close image preview">&times;</button>
+    <img src="" alt="Enlarged gallery image" id="lightboxImg">
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Gallery lightbox
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => {
+        const full = item.getAttribute('data-full');
+        if (full) {
+          lightboxImg.src = full;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+          lightboxClose.focus();
+        }
+      });
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          item.click();
+        }
+      });
+      item.setAttribute('tabindex', '0');
+      item.setAttribute('role', 'button');
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      lightboxImg.src = '';
+      document.body.style.overflow = '';
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox();
+    });
+
+    // Video placeholder interaction (no autoplay, just a gentle notice)
+    const videoPlaceholder = document.getElementById('videoPlaceholder');
+    if (videoPlaceholder) {
+      videoPlaceholder.addEventListener('click', () => {
+        videoPlaceholder.style.outline = '3px solid var(--sun)';
+        setTimeout(() => { videoPlaceholder.style.outline = ''; }, 1200);
+      });
+      videoPlaceholder.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          videoPlaceholder.click();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
